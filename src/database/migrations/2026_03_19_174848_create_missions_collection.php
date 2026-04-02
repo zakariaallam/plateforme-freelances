@@ -12,6 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('missions', function (Blueprint $collection) {
+            $collection->string('titre');
+            $collection->text('description');
+            $collection->double('budget');
+            $collection->array('technologies');
+            $collection->string('type');
+            $collection->string('status');
+            $collection->string('user_id')->index();
             $collection->timestamps();
         });
     }
